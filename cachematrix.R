@@ -4,10 +4,12 @@
 ## When we are getting inverse matrix of a large matrix (100000 x 100000), it may require time for your computer.
 ## Once you get the inverse of "x", you are gonna get the inverse easier than before!
 
-## This function creats a special "matrix" object that can cache its invers
-## , so you are not able to print the object by writting the name directly on console.
-##        Suppose that the name of the object is "abc"
-##        when you type "abc" on the console, you will get annoying message with <enviroment: ~~~~~>
+## This function creats a special "matrix" object that can cache its inverse.
+## set the value of the matrix (set)
+## get the value of the matrix (get)
+## set the value of the inverse matrix (setInverse)
+## get the value of the inverse matrix (getInverse)
+
 makeCacheMatrix <- function(x = matrix()) {
       i <- NULL
       set <- function(y) {
@@ -25,7 +27,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## If the inverse of the matrix is stored, cacheSolve function immediately return the value with message
-## If not, the function calculate the inverse of x then return.
+## If not, the function calculate the inverse of x and sets the value of the inverse matrix in the cache via setInverse function.
+
 cacheSolve <- function(x, ...) {
       i <- x$getInverse()
       if(!is.null(i)) {
